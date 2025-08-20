@@ -841,8 +841,8 @@ export default function createTippy(
   }
 
   function clearDelayTimeouts(): void {
-    clearTimeout(showTimeout);
-    clearTimeout(hideTimeout);
+    if(showTimeout) clearTimeout(showTimeout);
+    if(hideTimeout) clearTimeout(hideTimeout);
     cancelAnimationFrame(scheduleHideAnimationFrame);
   }
 
